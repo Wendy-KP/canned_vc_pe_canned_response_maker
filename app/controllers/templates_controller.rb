@@ -57,6 +57,22 @@ class TemplatesController < ApplicationController
     end
   end
 
+  def destroy_row_from_function
+    @template = Template.find(params.fetch("id_to_remove"))
+
+    @template.destroy
+
+    redirect_to("/functions/#{@template.function_id}", notice: "Template deleted successfully.")
+  end
+
+  def destroy_row_from_user
+    @template = Template.find(params.fetch("id_to_remove"))
+
+    @template.destroy
+
+    redirect_to("/users/#{@template.user_id}", notice: "Template deleted successfully.")
+  end
+
   def destroy_row
     @template = Template.find(params.fetch("id_to_remove"))
 

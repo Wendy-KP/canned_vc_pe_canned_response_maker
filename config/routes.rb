@@ -55,6 +55,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_template/:id_to_remove", { :controller => "templates", :action => "destroy_row" })
+  get("/delete_template_from_user/:id_to_remove", { :controller => "templates", :action => "destroy_row_from_user" })
+  get("/delete_template_from_function/:id_to_remove", { :controller => "templates", :action => "destroy_row_from_function" })
 
   #------------------------------
 
