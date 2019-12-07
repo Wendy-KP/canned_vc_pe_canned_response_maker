@@ -52,7 +52,11 @@
       </dt>
       <!-- Display function_id start -->
       <dd>
-        <%= @template.function_id %>
+        <% if @template.function.present? %>
+          <a href="/functions/<%= @template.function_id %>">
+            <%= @template.function.function_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display function_id end -->
 
@@ -61,7 +65,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @template.user_id %>
+        <% if @template.user.present? %>
+          <a href="/users/<%= @template.user_id %>">
+            <%= @template.user.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

@@ -78,13 +78,21 @@
 
         <!-- Display template.function_id start -->
         <td>
-          <%= template.function.function_name %>
+          <% if template.function.present? %>
+            <a href="/functions/<%= template.function.id %>">
+              <%= template.function.function_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display template.function_id end -->
 
         <!-- Display template.user_id start -->
         <td>
-          <%= template.user.created_at %>
+          <% if template.user.present? %>
+            <a href="/users/<%= template.user.id %>">
+              <%= template.user.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display template.user_id end -->
 
