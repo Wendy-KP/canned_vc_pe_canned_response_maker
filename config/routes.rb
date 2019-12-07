@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Function resource:
+
+  # CREATE
+  get("/functions/new", { :controller => "functions", :action => "new_form" })
+  post("/create_function", { :controller => "functions", :action => "create_row" })
+
+  # READ
+  get("/functions", { :controller => "functions", :action => "index" })
+  get("/functions/:id_to_display", { :controller => "functions", :action => "show" })
+
+  # UPDATE
+  get("/functions/:prefill_with_id/edit", { :controller => "functions", :action => "edit_form" })
+  post("/update_function/:id_to_modify", { :controller => "functions", :action => "update_row" })
+
+  # DELETE
+  get("/delete_function/:id_to_remove", { :controller => "functions", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Template resource:
 
   # CREATE
