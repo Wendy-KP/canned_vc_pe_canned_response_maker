@@ -6,6 +6,7 @@ class FunctionsController < ApplicationController
   end
 
   def show
+    @template = Template.new
     @function = Function.find(params.fetch("id_to_display"))
 
     render("function_templates/show.html.erb")

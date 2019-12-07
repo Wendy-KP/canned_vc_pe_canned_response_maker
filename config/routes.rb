@@ -44,6 +44,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/templates/new", { :controller => "templates", :action => "new_form" })
   post("/create_template", { :controller => "templates", :action => "create_row" })
+  post("/create_template_from_user", { :controller => "templates", :action => "create_row_from_user" })
+  post("/create_template_from_function", { :controller => "templates", :action => "create_row_from_function" })
 
   # READ
   get("/templates", { :controller => "templates", :action => "index" })

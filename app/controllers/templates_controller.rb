@@ -34,6 +34,40 @@ class TemplatesController < ApplicationController
     end
   end
 
+  def create_row_from_function
+    @template = Template.new
+
+    @template.description = params.fetch("description")
+    @template.template_text = params.fetch("template_text")
+    @template.function_id = params.fetch("function_id")
+    @template.user_id = params.fetch("user_id")
+
+    if @template.valid?
+      @template.save
+
+      redirect_to("/functions/#{@template.function_id}", notice: "Template created successfully.")
+    else
+      render("template_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_user
+    @template = Template.new
+
+    @template.description = params.fetch("description")
+    @template.template_text = params.fetch("template_text")
+    @template.function_id = params.fetch("function_id")
+    @template.user_id = params.fetch("user_id")
+
+    if @template.valid?
+      @template.save
+
+      redirect_to("/users/#{@template.user_id}", notice: "Template created successfully.")
+    else
+      render("template_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @template = Template.find(params.fetch("prefill_with_id"))
 
