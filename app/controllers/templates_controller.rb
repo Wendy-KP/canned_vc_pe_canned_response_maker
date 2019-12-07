@@ -1,6 +1,7 @@
 class TemplatesController < ApplicationController
   def index
-    @templates = Template.page(params[:page]).per(10)
+    @q = Template.ransack(params[:q])
+    @templates = @q.result(:distinct => true).includes(:function, :user).page(params[:page]).per(10)
 
     render("template_templates/index.html.erb")
   end

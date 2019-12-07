@@ -1,6 +1,7 @@
 class FunctionsController < ApplicationController
   def index
-    @functions = Function.page(params[:page]).per(10)
+    @q = Function.ransack(params[:q])
+    @functions = @q.result(:distinct => true).includes(:templates).page(params[:page]).per(10)
 
     render("function_templates/index.html.erb")
   end
