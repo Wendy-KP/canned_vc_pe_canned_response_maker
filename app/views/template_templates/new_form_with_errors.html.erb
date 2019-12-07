@@ -51,7 +51,7 @@
     </label>
 
     <!-- Input for function_id start -->
-    <input type="text" id="function_id" name="function_id" class="form-control" value="<%= @template.function_id %>">
+    <%= select_tag(:function_id, options_from_collection_for_select(Function.all, :id, :function_name, @template.function_id), :class => "form-control") %>
     <!-- Input for function_id end -->
   </div>
   <!-- Label and input for function_id end -->
