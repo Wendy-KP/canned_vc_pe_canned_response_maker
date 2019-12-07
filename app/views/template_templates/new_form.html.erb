@@ -5,57 +5,39 @@
 
 <hr>
 
-<!-- Form template start -->
 <form action="/create_template" method="post">
-<!-- Form template end -->
 
-  <!-- Label and input for description start -->
   <div class="form-group">
     <label for="description">
       Description
     </label>
 
-    <!-- Input for description start -->
     <textarea id="description" name="description" class="form-control" rows="3"></textarea>
-    <!-- Input for description end -->
   </div>
-  <!-- Label and input for description end -->
 
-  <!-- Label and input for template_text start -->
   <div class="form-group">
     <label for="template_text">
       Template text
     </label>
 
-    <!-- Input for template_text start -->
     <textarea id="template_text" name="template_text" class="form-control" rows="3"></textarea>
-    <!-- Input for template_text end -->
   </div>
-  <!-- Label and input for template_text end -->
 
-  <!-- Label and input for function_id start -->
   <div class="form-group">
     <label for="function_id">
       Function
     </label>
 
-    <!-- Input for function_id start -->
     <%= select_tag(:function_id, options_from_collection_for_select(Function.all, :id, :function_name, @template.function_id), :class => "form-control") %>
-    <!-- Input for function_id end -->
   </div>
-  <!-- Label and input for function_id end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <label for="user_id">
       User
     </label>
 
-    <!-- Input for user_id start -->
     <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :created_at, @template.user_id), :class => "form-control") %>
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create template

@@ -11,58 +11,46 @@
         </a>
       </div>
 
-      <!-- Edit link function start -->
       <div class="col">
         <a href="/functions/<%= @function.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit function
         </a>
       </div>
-      <!-- Edit link function end -->
 
-      <!-- Delete link function start -->
       <div class="col">
         <a href="/delete_function/<%= @function.id %>" class="btn btn-block btn-outline-secondary">
           Delete function
         </a>
       </div>
-      <!-- Delete link function end -->
     </div>
 
     <dl>
       <dt>
         Function name
       </dt>
-      <!-- Display function_name start -->
       <dd>
         <%= @function.function_name %>
       </dd>
-      <!-- Display function_name end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@function.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@function.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "function_templates/function_templates" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

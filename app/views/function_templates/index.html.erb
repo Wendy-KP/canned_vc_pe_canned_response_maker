@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "function_templates/functions_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -50,29 +46,21 @@
 
       <% @functions.each do |function| %>
       <tr>
-        <!-- Display function.id start -->
         <td>
           <%= function.id %>
         </td>
-        <!-- Display function.id end -->
 
-        <!-- Display function.function_name start -->
         <td>
           <%= function.function_name %>
         </td>
-        <!-- Display function.function_name end -->
 
-        <!-- Display function.created_at start -->
         <td>
           <%= time_ago_in_words(function.created_at) %> ago
         </td>
-        <!-- Display function.created_at end -->
 
-        <!-- Display function.updated_at start -->
         <td>
           <%= time_ago_in_words(function.updated_at) %> ago
         </td>
-        <!-- Display function.updated_at end -->
 
         <td>
           <a href="/functions/<%= function.id %>">

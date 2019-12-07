@@ -11,46 +11,37 @@
         </a>
       </div>
 
-      <!-- Edit link template start -->
       <div class="col">
         <a href="/templates/<%= @template.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit template
         </a>
       </div>
-      <!-- Edit link template end -->
 
-      <!-- Delete link template start -->
       <div class="col">
         <a href="/delete_template/<%= @template.id %>" class="btn btn-block btn-outline-secondary">
           Delete template
         </a>
       </div>
-      <!-- Delete link template end -->
     </div>
 
     <dl>
       <dt>
         Description
       </dt>
-      <!-- Display description start -->
       <dd>
         <%= @template.description %>
       </dd>
-      <!-- Display description end -->
 
       <dt>
         Template text
       </dt>
-      <!-- Display template_text start -->
       <dd>
         <%= @template.template_text %>
       </dd>
-      <!-- Display template_text end -->
 
       <dt>
         Function
       </dt>
-      <!-- Display function_id start -->
       <dd>
         <% if @template.function.present? %>
           <a href="/functions/<%= @template.function_id %>">
@@ -58,12 +49,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display function_id end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @template.user.present? %>
           <a href="/users/<%= @template.user_id %>">
@@ -71,28 +60,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@template.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@template.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->
