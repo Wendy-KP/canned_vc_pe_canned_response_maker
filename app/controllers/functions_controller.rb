@@ -1,6 +1,6 @@
 class FunctionsController < ApplicationController
   def index
-    @functions = Function.all
+    @functions = Function.page(params[:page]).per(10)
 
     render("function_templates/index.html.erb")
   end

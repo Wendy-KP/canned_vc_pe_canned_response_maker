@@ -1,6 +1,6 @@
 class TemplatesController < ApplicationController
   def index
-    @templates = Template.all
+    @templates = Template.page(params[:page]).per(10)
 
     render("template_templates/index.html.erb")
   end
