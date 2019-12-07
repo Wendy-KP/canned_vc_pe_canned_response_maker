@@ -1,0 +1,91 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Template #<%= @template.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/templates" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link template start -->
+      <div class="col">
+        <a href="/templates/<%= @template.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit template
+        </a>
+      </div>
+      <!-- Edit link template end -->
+
+      <!-- Delete link template start -->
+      <div class="col">
+        <a href="/delete_template/<%= @template.id %>" class="btn btn-block btn-outline-secondary">
+          Delete template
+        </a>
+      </div>
+      <!-- Delete link template end -->
+    </div>
+
+    <dl>
+      <dt>
+        Description
+      </dt>
+      <!-- Display description start -->
+      <dd>
+        <%= @template.description %>
+      </dd>
+      <!-- Display description end -->
+
+      <dt>
+        Template text
+      </dt>
+      <!-- Display template_text start -->
+      <dd>
+        <%= @template.template_text %>
+      </dd>
+      <!-- Display template_text end -->
+
+      <dt>
+        Function
+      </dt>
+      <!-- Display function_id start -->
+      <dd>
+        <%= @template.function_id %>
+      </dd>
+      <!-- Display function_id end -->
+
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @template.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@template.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@template.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
