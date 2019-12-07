@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "templates#index"
   # Routes for the User resource:
 
   # CREATE
