@@ -4,9 +4,9 @@ RSpec.describe Template, type: :model do
   
     describe "Direct Associations" do
 
-    it { should belong_to(:user) }
-
     it { should belong_to(:function) }
+
+    it { should have_one(:canned_response) }
 
     end
 

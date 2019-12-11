@@ -1,7 +1,7 @@
-class User < ApplicationRecord
+class CannedResponse < ApplicationRecord
   # Direct associations
 
-  has_many   :templates
+  belongs_to :template
 
   # Indirect associations
 
