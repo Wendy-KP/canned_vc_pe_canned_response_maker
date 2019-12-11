@@ -1,6 +1,6 @@
-ActiveAdmin.register User do
+ActiveAdmin.register CannedResponse do
 
- permit_params 
+ permit_params :template_id, :email_text
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

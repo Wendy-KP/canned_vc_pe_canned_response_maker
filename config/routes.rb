@@ -1,22 +1,22 @@
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root :to => "templates#index"
-  # Routes for the User resource:
+  # Routes for the Canned response resource:
 
   # CREATE
-  get("/users/new", { :controller => "users", :action => "new_form" })
-  post("/create_user", { :controller => "users", :action => "create_row" })
+  get("/canned_responses/new", { :controller => "canned_responses", :action => "new_form" })
+  post("/create_canned_response", { :controller => "canned_responses", :action => "create_row" })
 
   # READ
-  get("/users", { :controller => "users", :action => "index" })
-  get("/users/:id_to_display", { :controller => "users", :action => "show" })
+  get("/canned_responses", { :controller => "canned_responses", :action => "index" })
+  get("/canned_responses/:id_to_display", { :controller => "canned_responses", :action => "show" })
 
   # UPDATE
-  get("/users/:prefill_with_id/edit", { :controller => "users", :action => "edit_form" })
-  post("/update_user/:id_to_modify", { :controller => "users", :action => "update_row" })
+  get("/canned_responses/:prefill_with_id/edit", { :controller => "canned_responses", :action => "edit_form" })
+  post("/update_canned_response/:id_to_modify", { :controller => "canned_responses", :action => "update_row" })
 
   # DELETE
-  get("/delete_user/:id_to_remove", { :controller => "users", :action => "destroy_row" })
+  get("/delete_canned_response/:id_to_remove", { :controller => "canned_responses", :action => "destroy_row" })
 
   #------------------------------
 
@@ -44,7 +44,6 @@ Rails.application.routes.draw do
   # CREATE
   get("/templates/new", { :controller => "templates", :action => "new_form" })
   post("/create_template", { :controller => "templates", :action => "create_row" })
-  post("/create_template_from_user", { :controller => "templates", :action => "create_row_from_user" })
   post("/create_template_from_function", { :controller => "templates", :action => "create_row_from_function" })
 
   # READ
@@ -57,7 +56,6 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_template/:id_to_remove", { :controller => "templates", :action => "destroy_row" })
-  get("/delete_template_from_user/:id_to_remove", { :controller => "templates", :action => "destroy_row_from_user" })
   get("/delete_template_from_function/:id_to_remove", { :controller => "templates", :action => "destroy_row_from_function" })
 
   #------------------------------

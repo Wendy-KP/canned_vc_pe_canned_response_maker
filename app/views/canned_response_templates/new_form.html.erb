@@ -1,0 +1,35 @@
+<h1>
+  Add a new canned response
+</h1>
+
+
+<hr>
+
+<form action="/create_canned_response" method="post">
+
+  <div class="form-group">
+    <label for="template_id">
+      Template
+    </label>
+
+    <%= select_tag(:template_id, options_from_collection_for_select(Template.all, :id, :description, @canned_response.template_id), :class => "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <label for="email_text">
+      Email text
+    </label>
+
+    <textarea id="email_text" name="email_text" class="form-control" rows="3"></textarea>
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create canned response
+  </button>
+</form>
+
+<hr>
+
+<a href="/canned_responses">
+  Go back
+</a>

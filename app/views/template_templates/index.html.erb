@@ -33,15 +33,7 @@
         </th>
 
         <th>
-          Template text
-        </th>
-
-        <th>
           Function
-        </th>
-
-        <th>
-          User
         </th>
 
         <th>
@@ -67,21 +59,9 @@
         </td>
 
         <td>
-          <%= template.template_text %>
-        </td>
-
-        <td>
           <% if template.function.present? %>
             <a href="/functions/<%= template.function.id %>">
               <%= template.function.function_name %>
-            </a>
-          <% end %>
-        </td>
-
-        <td>
-          <% if template.user.present? %>
-            <a href="/users/<%= template.user.id %>">
-              <%= template.user.created_at %>
             </a>
           <% end %>
         </td>

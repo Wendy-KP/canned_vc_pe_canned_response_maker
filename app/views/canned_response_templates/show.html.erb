@@ -1,0 +1,62 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Canned response #<%= @canned_response.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/canned_responses" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/canned_responses/<%= @canned_response.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit canned response
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_canned_response/<%= @canned_response.id %>" class="btn btn-block btn-outline-secondary">
+          Delete canned response
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Template
+      </dt>
+      <dd>
+        <% if @canned_response.template.present? %>
+          <a href="/templates/<%= @canned_response.template_id %>">
+            <%= @canned_response.template.description %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        Email text
+      </dt>
+      <dd>
+        <%= @canned_response.email_text %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@canned_response.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@canned_response.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+

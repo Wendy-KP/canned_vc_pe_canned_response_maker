@@ -33,30 +33,12 @@
       </dd>
 
       <dt>
-        Template text
-      </dt>
-      <dd>
-        <%= @template.template_text %>
-      </dd>
-
-      <dt>
         Function
       </dt>
       <dd>
         <% if @template.function.present? %>
           <a href="/functions/<%= @template.function_id %>">
             <%= @template.function.function_name %>
-          </a>
-        <% end %>
-      </dd>
-
-      <dt>
-        User
-      </dt>
-      <dd>
-        <% if @template.user.present? %>
-          <a href="/users/<%= @template.user_id %>">
-            <%= @template.user.created_at %>
           </a>
         <% end %>
       </dd>

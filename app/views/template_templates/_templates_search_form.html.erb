@@ -7,11 +7,6 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :template_text_cont, "Template text contains" %>
-    <%= f.text_field :template_text_cont, :class => "form-control", :placeholder => "Template text contains" %>
-  </div>
-
-  <div class="form-group">
     <%= f.label :created_at, "Created at" %>
     <div class="row">
       <div class='col-md-6 mb-1'>
@@ -56,46 +51,6 @@
     <%= f.label :function_function_name_cont, "Function function_name contains" %>
     <%= f.text_field :function_function_name_cont, :class => "form-control", :placeholder => "Function function_name contains" %>
   </div>
-
-  <div class="form-group">
-    <%= f.label :created_at, "User Created at" %>
-    <div class="row">
-      <div class='col-md-6 mb-1'>
-        <div class='input-group date' id='usergteqcreated_atPicker' data-target-input="nearest">
-          <%= f.text_field :user_created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "User Created at greater than or equal to", :data => {:target => '#usergteqcreated_atPicker'} %>
-          <div class="input-group-append" data-target='#usergteqcreated_atPicker' data-toggle="datetimepicker">
-            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-          </div>
-        </div>
-      </div>
-
-      <div class='col-md-6'>
-        <div class='input-group date' id='userlteqcreated_atPicker' data-target-input="nearest">
-          <%= f.text_field :user_created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "User Created at less than or equal to", :data => {:target => '#userlteqcreated_atPicker'} %>
-          <div class="input-group-append" data-target='#userlteqcreated_atPicker' data-toggle="datetimepicker">
-            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script type="text/javascript">
-      $(function () {
-          $('#usergteqcreated_atPicker').datetimepicker({
-              format: 'YYYY-MM-DD hh:mm:SS'
-          });
-          $('#userlteqcreated_atPicker').datetimepicker({
-              useCurrent: false,
-              format: 'YYYY-MM-DD hh:mm:SS'
-          });
-          $('#usergteqcreated_atPicker').on("dp.change", function (e) {
-              $('#userlteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
-          });
-          $('#userlteqcreated_atPicker').on("dp.change", function (e) {
-              $('#usergteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
-          });
-      });
-  </script>
 
 
   <%= f.submit :class => "btn btn-primary btn-block mb-1" %>

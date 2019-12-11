@@ -1,5 +1,10 @@
-<%= search_form_for @q, :class => collapse_search_form, :id => "users_filters" do |f| %>
+<%= search_form_for @q, :class => collapse_search_form, :id => "canned_responses_filters" do |f| %>
   <p class="lead">Narrow results:</p>
+
+  <div class="form-group">
+    <%= f.label :email_text_cont, "Email text contains" %>
+    <%= f.text_field :email_text_cont, :class => "form-control", :placeholder => "Email text contains" %>
+  </div>
 
   <div class="form-group">
     <%= f.label :created_at, "Created at" %>
@@ -43,17 +48,17 @@
 
 
   <div class="form-group">
-    <%= f.label :templates_description_cont, "Template description contains" %>
-    <%= f.text_field :templates_description_cont, :class => "form-control", :placeholder => "Template description contains" %>
+    <%= f.label :template_description_cont, "Template description contains" %>
+    <%= f.text_field :template_description_cont, :class => "form-control", :placeholder => "Template description contains" %>
   </div>
 
 
   <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
 
-  <a href="/users" class="btn btn-outline-secondary btn-block mb-1">Clear filters</a>
+  <a href="/canned_responses" class="btn btn-outline-secondary btn-block mb-1">Clear filters</a>
 
 <% end %>
 
-<a class="btn btn-outline-secondary btn-block mb-1" data-toggle="collapse" href="#users_filters">
+<a class="btn btn-outline-secondary btn-block mb-1" data-toggle="collapse" href="#canned_responses_filters">
   Show filters
 </a>
